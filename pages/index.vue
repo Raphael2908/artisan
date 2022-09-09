@@ -74,22 +74,27 @@
       </section>    
 
 
-      <form class="h-screen absolute bg-stone-100 w-full flex items-center justify-center flex-col gap-5 px-2">
+      <form @submit.prevent="messageReinhardt" class="h-screen absolute bg-stone-100 w-full flex items-center justify-center flex-col gap-5 px-2">
         <h1 class="text-2xl md:text-4xl text-center">Let's make something <span class="font-bold">extravagant</span></h1>
         <div class="flex flex-col w-1/2 gap-2">
           <div>
             <label for="">Name</label>
-            <input class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5" type="text">
+            <input v-model="form.name" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5" type="text">
           </div>
 
           <div>
             <label for="">Email</label>
-            <input class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5" type="text">
+            <input v-model="form.email" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5" type="text">
+          </div>
+
+          <div>
+            <label for="">Phone Number</label>
+            <input v-model="form.phone_number" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5" type="text">
           </div>
 
           <div>
             <label for="">Message</label>
-            <textarea class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5 md:h-64"/>
+            <textarea v-model="form.message" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5 md:h-64"/>
           </div>
         </div>
         <button class="bg-stone-500 px-4 py-2 rounded-xl text-white text-xl font-semibold shadow-lg hover:bg-stone-800 duration-200 hover:scale-110 active:scale-90">Collaborate</button>
@@ -101,6 +106,8 @@
 
 <script>
 import { ChevronDownIcon } from '@heroicons/vue/24/solid'
+import axios from 'axios'
+import Swal from 'sweetalert2'
 
 export default {
   components: {
@@ -125,6 +132,12 @@ export default {
           title: 'Accomplishments',
           description: 'Gotta make Mum proud'
         }
+      },
+      form: {
+        name: '',
+        email: '',
+        phone_number: '',
+        message: ''
       }
     }
   },
@@ -183,6 +196,28 @@ export default {
   methods: {
     parallexScroll(){
       this.parallex = window.scrollY
+    },
+    async messageReinhardt() {  
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-right',
+        iconColor: 'green',
+        customClass: {
+          popup: 'colored-toast'
+        },
+        showConfirmButton: false,
+        timer: 1500,
+        timerProgressBar: true
+      })
+      let res = await axios.post('/api/reinhardt', {
+        data: this.form
+      })
+      if(res.data == 'success'){
+        await Toast.fire({
+          icon: 'success',
+          title: 'Message Delivered'
+        })
+      }
     }
   }
 }
@@ -192,4 +227,5 @@ export default {
 .landing-image {
   background-image: url('/storm-clouds.jpeg');
 }
+
 </style>

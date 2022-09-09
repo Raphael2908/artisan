@@ -46,12 +46,12 @@
         </div>
         <div class="h-screen md:h-screen md:absolute md:top-0 bg-stone-300 flex w-full flex-wrap md:justify-end" id="mark1">
             <div class="grid grid-cols-2 gap-5 w-full md:grid-cols-3 h-1/2 place-self-center md:w-1/2 place-items-center">
-              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="laravel.png" alt="Laravel">
-              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="vue.png" alt="Vue">
-              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="tailwind.png" alt="Tailwind">
-              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="flutter.png" alt="flutter">
-              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="nuxt.png" alt="nuxt">
-              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="github.png" alt="github">
+              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="/laravel.png" alt="Laravel">
+              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="/vue.png" alt="Vue">
+              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="/tailwind.png" alt="Tailwind">
+              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="/flutter.png" alt="flutter">
+              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="/nuxt.png" alt="nuxt">
+              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="/github.png" alt="github">
             </div>
         </div>
         <div class="h-screen md:h-screen bg-stone-400 flex w-full items-center md:justify-end" id="mark2">

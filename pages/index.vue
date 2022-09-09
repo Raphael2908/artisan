@@ -64,7 +64,7 @@
               </div>
             </div>
         </div>
-         <div class="h-screen md:h-screen bg-stone-500 flex w-full items-center md:justify-end" id="mark2">
+         <div class="h-screen md:h-screen bg-stone-500 flex w-full items-center md:justify-end" id="mark3">
             <div class="grid grid-cols-1 place-self-center md:w-1/2 place-items-center">
               <div class="flex flex-col gap-2 w-3/4">
                   <img class="rounded-2xl shadow-lg hover:scale-105 duration-300" src="/dean_list.jpeg" alt="dean list" srcset="">

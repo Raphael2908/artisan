@@ -74,7 +74,7 @@
       </section>    
 
 
-      <form @submit.prevent="messageReinhardt" class="h-screen absolute bg-stone-100 w-full flex items-center justify-center flex-col gap-5 px-2">
+      <form ref="contactForm" @submit.prevent="messageReinhardt" class="h-screen absolute bg-stone-100 w-full flex items-center justify-center flex-col gap-5 px-2">
         <h1 class="text-2xl md:text-4xl text-center">Let's make something <span class="font-bold">extravagant</span></h1>
         <div class="flex flex-col w-1/2 gap-2">
           <div>
@@ -197,7 +197,7 @@ export default {
     parallexScroll(){
       this.parallex = window.scrollY
     },
-    async messageReinhardt() {  
+    async messageReinhardt(event) {  
       const Toast = Swal.mixin({
         toast: true,
         position: 'top-right',
@@ -218,6 +218,7 @@ export default {
           title: 'Message Delivered'
         })
       }
+      event.target.reset()
     }
   }
 }

@@ -3,10 +3,10 @@
     <section class="h-screen sticky top-0 overflow-hidden">
       <div class="landing-image h-screen bg-cover bg-center"/>
       <div class="absolute flex justify-center w-full top-0">
-        <img class="h-36 sm:h-44 md:h-48" src="/moon.png" alt="moon" :style="moonScroll">
+        <img class="h-36 sm:h-44 md:h-48" src="/moon-min.png" alt="moon" :style="moonScroll">
       </div>
       <div class="absolute flex justify-center w-full top-0">
-        <img class="h-screen object-cover" src="/GreekStatue.png" alt="statue" :style="statueScroll">
+        <img class="h-screen object-cover" src="/GreekStatue-min.png" alt="statue" :style="statueScroll">
       </div>
       <h1
       class="font-semibold absolute flex justify-center items-center h-screen top-0 text-4xl sm:text-6xl lg:text-8xl text-white w-full" :style="heroTextScroll">
@@ -225,7 +225,7 @@ export default {
 
 <style scoped>
 .landing-image {
-  background-image: url('/storm-clouds.jpeg');
+  background-image: url('/storm-clouds-min.jpeg');
 }
 
 </style>

@@ -8,7 +8,7 @@ async function commandCentre(command) {
     let message = ''
     switch (command) {
         case '/dictionary':
-             message = "Hi sir, you may try to use this: \n \n Are you a secret? Because I can't share you. \n \n All the best sir."
+             message = "Hi sir, you may try to use this: \n \nAre you a secret? Because I can't share you. \n \nAll the best sir."
             break;
     
         default:
@@ -16,7 +16,7 @@ async function commandCentre(command) {
             break;
     }
 
-    axios.post(url, {
+    await axios.post(url, {
         chat_id: config.chatId,
         text: message
     })
@@ -25,7 +25,7 @@ async function commandCentre(command) {
 
 async function greeting(){
     let message = 'Hi sir, how may I help you?'
-    axios.post(url, {
+    await axios.post(url, {
         chat_id: config.chatId,
         text: message
     })
@@ -36,10 +36,10 @@ export default defineEventHandler(async (event) => {
     const body = await useBody(event)
 
     if (body.message.text[0] == '/' ){
-        await commandCentre(body.message.text)
+        commandCentre(body.message.text)
     }
     else {
-        await greeting()
+        greeting()
     }
 
     return 'Message Received, Reply sent'

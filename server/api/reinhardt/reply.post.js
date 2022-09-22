@@ -16,7 +16,7 @@ async function commandCentre(command) {
             break;
     }
 
-    axios.post(url, {
+    return axios.post(url, {
         chat_id: config.chatId,
         text: message
     }).then((response) => {
@@ -26,7 +26,7 @@ async function commandCentre(command) {
 
 async function greeting(){
     let message = 'Hi sir, how may I help you?'
-    axios.post(url, {
+    return axios.post(url, {
         chat_id: config.chatId,
         text: message
     }).then((response) => {
@@ -35,14 +35,13 @@ async function greeting(){
 }
 
 export default defineEventHandler(async (event) => {
-    useBody(event).then((response) => {
+    return useBody(event).then((response) => {
         if (response.message.text[0] == '/' ){
-            return commandCentre(body.message.text)
+            return commandCentre(response.message.text)
         }
         else {
             return greeting()
         }
     })
-    return 'success'
 })
 

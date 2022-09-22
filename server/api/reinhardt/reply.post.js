@@ -16,32 +16,33 @@ async function commandCentre(command) {
             break;
     }
 
-    await axios.post(url, {
+    axios.post(url, {
         chat_id: config.chatId,
         text: message
+    }).then((response) => {
+        return 'command received, response sent'
     })
-    return 'success'
 }
 
 async function greeting(){
     let message = 'Hi sir, how may I help you?'
-    await axios.post(url, {
+    axios.post(url, {
         chat_id: config.chatId,
         text: message
+    }).then((response) => {
+        return 'greeting sent'
     })
-    return 'success'
 }
 
 export default defineEventHandler(async (event) => {
-    const body = await useBody(event)
-
-    if (body.message.text[0] == '/' ){
-        commandCentre(body.message.text)
-    }
-    else {
-        greeting()
-    }
-
-    return 'Message Received, Reply sent'
+    useBody(event).then((response) => {
+        if (response.message.text[0] == '/' ){
+            return commandCentre(body.message.text)
+        }
+        else {
+            return greeting()
+        }
+    })
+    return 'success'
 })
 

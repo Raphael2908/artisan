@@ -8,7 +8,7 @@ async function commandCentre(command) {
     let message = ''
     switch (command) {
         case '/dictionary':
-             message = "Hi sir, you may try to use this: \n Are you a secret? Because I can't share you. \n All the best sir."
+             message = "Hi sir, you may try to use this: \n \n Are you a secret? Because I can't share you. \n \n All the best sir."
             break;
     
         default:
@@ -20,6 +20,7 @@ async function commandCentre(command) {
         chat_id: config.chatId,
         text: message
     })
+    return 'success'
 }
 
 async function greeting(){
@@ -28,11 +29,11 @@ async function greeting(){
         chat_id: config.chatId,
         text: message
     })
+    return 'success'
 }
 
 export default defineEventHandler(async (event) => {
     const body = await useBody(event)
-    let message = ''
 
     if (body.message.text[0] == '/' ){
         await commandCentre(body.message.text)

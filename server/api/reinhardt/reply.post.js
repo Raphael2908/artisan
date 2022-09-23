@@ -41,8 +41,8 @@ export default defineEventHandler(async (event) => {
         if (response.message.text[0] == '/' ){
             return commandCentre(response.message.text)
         }
-        if(response.message.text.includes('Reinhardt')){
-            return response.message
+        else if(response.message.text.includes('Reinhardt')){
+            return greeting()
         }
     })
 })

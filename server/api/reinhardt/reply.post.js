@@ -38,11 +38,14 @@ async function greeting() {
 
 export default defineEventHandler(async (event) => {
     return useBody(event).then((response) => {
-        if (response.message.text[0] == '/' ){
+        if (response.message.text[0] == '/'){
             return commandCentre(response.message.text)
         }
         else if(response.message.text.includes('Reinhardt')){
             return greeting()
+        }
+        else{
+            return 'Message Received, Reinhardt will not reply'
         }
     })
 })

@@ -1,14 +1,15 @@
 import axios from "axios"
 
-const config = useRuntimeConfig()
 
+const config = useRuntimeConfig()
 const url = `https://api.telegram.org/bot${config.reinhardt}/sendMessage`
+
 
 async function commandCentre(command) {
     let message = ''
     switch (command) {
         case '/dictionary':
-             message = "Hi sir, you may try to use this: \n \nAre you a secret? Because I can't share you. \n \nAll the best sir."
+            message = "Hi sir, you may want to try to use this: \n \nAre you a secret? Because I can't share you. \n \nAll the best sir."
             break;
     
         default:
@@ -24,7 +25,7 @@ async function commandCentre(command) {
     })
 }
 
-async function greeting(){
+async function greeting() {
     let message = 'Hi sir, how may I help you?'
     return axios.post(url, {
         chat_id: config.chatId,
@@ -39,8 +40,8 @@ export default defineEventHandler(async (event) => {
         if (response.message.text[0] == '/' ){
             return commandCentre(response.message.text)
         }
-        else {
-            return greeting()
+        else if(response.message.text.includes('reinhardt')){
+            greeting
         }
     })
 })

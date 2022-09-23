@@ -11,7 +11,8 @@ async function commandCentre(command) {
         case '/dictionary':
             message = "Hi sir, you may want to try to use this: \n \nAre you a secret? Because I can't share you. \n \nAll the best sir."
             break;
-    
+        case '/sos':
+            message = "SOS protocol initiated sir"
         default:
             message = "Hi sir, I don't quite get your command"
             break;
@@ -40,8 +41,8 @@ export default defineEventHandler(async (event) => {
         if (response.message.text[0] == '/' ){
             return commandCentre(response.message.text)
         }
-        else {
-            return greeting()
+        if(response.message.text.includes('Reinhardt')){
+            return response.message
         }
     })
 })

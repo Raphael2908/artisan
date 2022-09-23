@@ -42,7 +42,7 @@ export default defineEventHandler(async (event) => {
             return commandCentre(response.message.text)
         }
         else if(response.message.text.includes('Reinhardt')){
-            greeting()
+            return greeting()
         }
     })
 })

@@ -12,46 +12,102 @@
       class="font-semibold absolute flex justify-center items-center h-screen top-0 text-4xl sm:text-6xl lg:text-8xl text-white w-full" :style="heroTextScroll">
         Hi, I am Raphael
       </h1>
-      <ChevronDownIcon class="absolute inset-x-0 bottom-16 h-24 md:h-32 text-white w-full" :style="chevronDownScroll"/>
+      <ChevronDownIcon @click="scrollToContent('about-me')" class="absolute inset-x-0 bottom-16 h-24 md:h-32 text-white w-full hover:cursor-pointer" :style="chevronDownScroll"/>
     </section>
     
-    <section class="relative h-screen bg-stone-100 text-gray-900 flex items-center">
+    <section class="relative h-screen bg-stone-100 text-gray-900 flex items-center" id="about-me">
       <div class="mx-auto container py-5 px-5 flex-col-reverse flex lg:flex-row items-center justify-between gap-10">
 
-        <div class="flex flex-col gap-5">
-          <div>
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold">About me</h1>
-            <p class="text-lg md:text-xl lg:text-2xl">
+        <div class="flex flex-col gap-5 lg:w-3/4">
+          <div class="w-3/4">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold whitespace-nowrap">About me</h1>
+            <p class="text-lg md:text-xl lg:text-2xl w-full">
               I am an aspiring ✨Digital Artisan✨ with the goal of creating quality digital products to help the world.
             </p>
           </div>
           
-          <div class="flex text-sm gap-x-3 gap-y-5 flex-wrap">
-            <h1 class="whitespace-nowrap bg-stone-300 text-stone-500 rounded-full text-center px-3 py-2">Digital Artisan</h1>
-            <h1 class="whitespace-nowrap bg-stone-300 text-stone-500 rounded-full text-center px-3 py-2">Temasek Polytechnic</h1>
-            <h1 class="whitespace-nowrap bg-stone-300 text-stone-500 rounded-full text-center px-3 py-2">Computer Engineering</h1>
-            <h1 class="whitespace-nowrap bg-stone-300 text-stone-500 rounded-full text-center px-3 py-2">GovTech Intern</h1>
+          <div class="flex text-sm gap-x-3 gap-y-5 flex-wrap w-fit">
+            <h1 class="whitespace-nowrap bg-stone-300 text-stone-500 hover:bg-slate-300 hover:text-slate-500 hover:scale-110 duration-200 rounded-full text-center px-3 py-2">Digital Artisan</h1>
+            <h1 class="whitespace-nowrap bg-stone-300 text-stone-500 hover:bg-slate-300 hover:text-slate-500 hover:scale-110 duration-200 rounded-full text-center px-3 py-2">Temasek Polytechnic</h1>
+            <h1 class="whitespace-nowrap bg-stone-300 text-stone-500 hover:bg-slate-300 hover:text-slate-500 hover:scale-110 duration-200 rounded-full text-center px-3 py-2">Computer Engineering</h1>
+            <h1 class="whitespace-nowrap bg-stone-300 text-stone-500 hover:bg-slate-300 hover:text-slate-500 hover:scale-110 duration-200 rounded-full text-center px-3 py-2">GovTech Intern</h1>
           </div>
         </div>
 
-        <img class="border rounded-full h-64 w-64 object-cover" src="/pfp.jpeg" alt="">
+        <!-- Image hole -->
+        <div class="border rounded-full h-64 w-64 overflow-hidden relative" id="mark0">
+          <div class="flex snap-x snap-mandatory w-full overflow-scroll absolute -top-24">
+            <img class="snap-always snap-center object-contain" src="/pfp.jpeg" alt="profile picture 1">
+            <img class="snap-always snap-center object-contain" src="/pfp2.jpeg" alt="profile picture 2">
+          </div>
+        </div>
 
       </div>
     </section>
 
-      <section class="relative ">
+      <section class="relative">
         <div class="h-1/4 md:w-1/2 md:h-screen bg-stone-100 sticky top-0 flex items-center flex-col justify-center z-10 py-5">
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-center w-full">{{ this.skills[this.currentSection].title }}</h1>
             <h1 class="text-center text-xl w-full">{{ this.skills[this.currentSection].description }}</h1>
         </div>
-        <div class="h-screen md:h-screen md:absolute md:top-0 bg-stone-300 flex w-full flex-wrap md:justify-end" id="mark1">
-            <div class="grid grid-cols-2 gap-5 w-full md:grid-cols-3 h-1/2 place-self-center md:w-1/2 place-items-center">
-              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="/laravel.png" alt="Laravel">
-              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="/vue.png" alt="Vue">
-              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="/tailwind.png" alt="Tailwind">
-              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="/flutter.png" alt="flutter">
-              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="/nuxt.png" alt="nuxt">
-              <img class="h-24 bg-stone-100 rounded-md p-4 shadow-lg hover:scale-110 duration-200" src="/github.png" alt="github">
+        <div class="h-screen md:h-screen md:absolute md:top-0 bg-stone-300 flex w-full flex-wrap justify-end" id="mark1">
+            <div class="grid grid-cols-2 gap-5 gap-y-16 w-full xl:grid-cols-3 h-1/2 py-5 md:w-1/2 place-items-center xl:place-self-center">
+
+            <!-- Laravel Card -->
+              <div class="flex flex-col h-36 w-36 lg:h-48 lg:w-48 gap-2 hover:scale-110 duration-200 items-start my-5">
+                <img class="min-h-full min-w-full bg-stone-100 rounded-md shadow-lg p-4" src="/laravel.png" alt="Laravel">
+                <h1 class="lg:text-xl pl-0.5">Laravel</h1>
+                <div class="flex gap-2 justify-start w-full">
+                  <p class="bg-rose-300 text-rose-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Backend</p>
+                  <p class="bg-gray-300 text-gray-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Framework</p>
+                </div>
+              </div>
+
+            <!-- Vue Card -->
+            <div class="flex flex-col h-36 w-36 lg:h-48 lg:w-48 gap-2 hover:scale-110 duration-200 items-start my-5">
+                <img class="min-h-full min-w-full bg-stone-100 rounded-md shadow-lg p-4" src="/vue.png" alt="Vue">
+                <h1 class="lg:text-xl pl-0.5">Vue</h1>
+                <div class="flex gap-2 justify-start w-full">
+                  <p class="bg-green-300 text-green-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Frontend</p>
+                  <p class="bg-gray-300 text-gray-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Framework</p>
+                </div>
+              </div>
+            <!-- Tailwind Card -->
+              <div class="flex flex-col h-36 w-36 lg:h-48 lg:w-48 gap-2 hover:scale-110 duration-200 items-start my-5">
+                <img class="min-h-full min-w-full bg-stone-100 rounded-md shadow-lg p-4" src="/tailwind.png" alt="Tailwind">
+                <h1 class="lg:text-xl pl-0.5 ">Tailwind</h1>
+                <div class="flex gap-2 justify-start w-full">
+                  <p class="bg-blue-300 text-blue-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">CSS</p>
+                  <p class="bg-gray-300 text-gray-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Framework</p>
+                </div>
+              </div>
+              <!-- Flutter Card -->
+              <div class="flex flex-col h-36 w-36 lg:h-48 lg:w-48 gap-2 hover:scale-110 duration-200 items-start my-5">
+                <img class="min-h-full min-w-full bg-stone-100 rounded-md shadow-lg p-4" src="/flutter.png" alt="flutter">
+                <h1 class="lg:text-xl pl-0.5">Flutter</h1>
+                <div class="flex gap-2 justify-start w-full">
+                  <p class="bg-sky-300 text-sky-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Ui SDK</p>
+                  <p class="bg-gray-300 text-gray-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Framework</p>
+                </div>
+              </div>
+              
+              <!-- Nuxt Card -->
+              <div class="flex flex-col h-36 w-36 lg:h-48 lg:w-48 gap-2 hover:scale-110 duration-200 items-start my-5">
+                <img class="min-h-full min-w-full bg-stone-100 rounded-md shadow-lg p-4" src="/nuxt.png" alt="nuxt">
+                <h1 class="lg:text-xl pl-0.5">Nuxt</h1>
+                <div class="flex gap-2 justify-start w-full">
+                  <p class="bg-green-300 text-green-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Frontend</p>
+                  <p class="bg-gray-300 text-gray-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Framework</p>
+                </div>
+              </div>
+              <!-- Github Card -->
+              <div class="flex flex-col h-36 w-36 lg:h-48 lg:w-48 gap-2 hover:scale-110 duration-200 items-start my-5">
+                <img class="min-h-full min-w-full bg-stone-100 rounded-md shadow-lg p-4" src="/github.png" alt="github">
+                <h1 class="lg:text-xl pl-0.5">Github</h1>
+                <div class="flex gap-2 justify-start w-full">
+                  <p class="bg-zinc-500 text-zinc-300  p-2 rounded-md text-xxs md:text-xs shadow-lg">Version Control</p>
+                </div>
+              </div>
             </div>
         </div>
         <div class="h-screen md:h-screen bg-stone-400 flex w-full items-center md:justify-end" id="mark2">
@@ -165,7 +221,7 @@ export default {
           this.lastYPos = document.documentElement.scrollTop
           return false
         }
-    }
+    },
   },
 
   created() {
@@ -178,18 +234,25 @@ export default {
     }
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if(entry.intersectionRatio > 0 && this.scrollingDown == true){
-            this.currentSection = entry.target.getAttribute('id')
+          const profilePicture = document.getElementById('mark0')
+          if(entry.target.getAttribute('id') == 'about-me'){
+            profilePicture.classList.add("hithere")
           }
-          else if (entry.intersectionRatio > 0 && this.scrollingDown == false){
-            this.currentSection = 
-            entry.target.previousElementSibling.getAttribute('id') ? entry.target.previousElementSibling.getAttribute('id') : 'mark1'
+          else{
+            profilePicture.classList.remove("hithere")
+            if(entry.intersectionRatio > 0 && this.scrollingDown == true){
+              this.currentSection = entry.target.getAttribute('id')
+            }
+            else if (entry.intersectionRatio > 0 && this.scrollingDown == false){
+              this.currentSection = entry.target.previousElementSibling.getAttribute('id') ? 
+              entry.target.previousElementSibling.getAttribute('id') : 'mark1'
+            }
           }
         });
       }, options);
 
-      document.querySelectorAll('#mark1, #mark2, #mark3').forEach((skill) => {
-        observer.observe(skill)
+      document.querySelectorAll('#about-me, #mark1, #mark2, #mark3').forEach((mark) => {
+        observer.observe(mark)
       })
   },
 
@@ -218,6 +281,11 @@ export default {
           title: 'Message Delivered'
         })
       }
+    },
+    scrollToContent(id) {  
+      document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+      });
     }
   }
 }
@@ -227,5 +295,19 @@ export default {
 .landing-image {
   background-image: url('/storm-clouds-min.jpeg');
 }
+.hithere {
+  animation: hithere 1.5s ease 2;
+}
 
+@keyframes hithere {
+  30% { transform: scale(1.1); }
+  40%, 60% { transform: rotate(-20deg) scale(1.1); }
+  50% { transform: rotate(20deg) scale(1.1); }
+  70% { transform: rotate(0deg) scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.text-xxs{
+  font-size: 10px;
+}
 </style>

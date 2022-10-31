@@ -35,12 +35,7 @@
         </div>
 
         <!-- Image hole -->
-        <div class="border rounded-full h-64 w-64 overflow-hidden relative" id="mark0">
-          <div class="flex snap-x snap-mandatory w-full overflow-scroll absolute -top-24">
-            <img class="snap-always snap-center object-contain" src="/pfp.jpeg" alt="profile picture 1">
-            <img class="snap-always snap-center object-contain" src="/pfp2.jpeg" alt="profile picture 2">
-          </div>
-        </div>
+        <img class="border rounded-full h-64 w-64 object-cover" src="/pfp.jpeg" alt="profile picture 1">
 
       </div>
     </section>
@@ -234,12 +229,6 @@ export default {
     }
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          const profilePicture = document.getElementById('mark0')
-          if(entry.target.getAttribute('id') == 'about-me'){
-            profilePicture.classList.add("hithere")
-          }
-          else{
-            profilePicture.classList.remove("hithere")
             if(entry.intersectionRatio > 0 && this.scrollingDown == true){
               this.currentSection = entry.target.getAttribute('id')
             }
@@ -247,11 +236,10 @@ export default {
               this.currentSection = entry.target.previousElementSibling.getAttribute('id') ? 
               entry.target.previousElementSibling.getAttribute('id') : 'mark1'
             }
-          }
         });
       }, options);
 
-      document.querySelectorAll('#about-me, #mark1, #mark2, #mark3').forEach((mark) => {
+      document.querySelectorAll('#mark1, #mark2, #mark3').forEach((mark) => {
         observer.observe(mark)
       })
   },
@@ -294,17 +282,6 @@ export default {
 <style scoped>
 .landing-image {
   background-image: url('/storm-clouds-min.jpeg');
-}
-.hithere {
-  animation: hithere 1.5s ease 2;
-}
-
-@keyframes hithere {
-  30% { transform: scale(1.1); }
-  40%, 60% { transform: rotate(-20deg) scale(1.1); }
-  50% { transform: rotate(20deg) scale(1.1); }
-  70% { transform: rotate(0deg) scale(1.1); }
-  100% { transform: scale(1); }
 }
 
 .text-xxs{

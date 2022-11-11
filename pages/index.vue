@@ -130,11 +130,13 @@
         <div class="flex flex-col w-1/2 gap-2">
           <div>
             <label for="">Name</label>
+            <p v-if="errorBag.name" class="text-red-500" for="">Please enter your name</p>
             <input v-model="form.name" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5" type="text">
           </div>
 
           <div>
             <label for="">Email</label>
+            <p v-if="errorBag.email" class="text-red-500" for="">Please enter a valid email</p>
             <input v-model="form.email" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5" type="text">
           </div>
 
@@ -145,6 +147,7 @@
 
           <div>
             <label for="">Message</label>
+            <p v-if="errorBag.message" class="text-red-500" for="">Please send me a message :P</p>
             <textarea v-model="form.message" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5 md:h-64"/>
           </div>
         </div>
@@ -189,7 +192,15 @@ export default {
         email: '',
         phone_number: '',
         message: ''
-      }
+      },
+      errorBag: {
+        type: Object,
+          default: {
+            name: '',
+            email: '',
+            message: ''
+          }
+        }
     }
   },
 
@@ -260,15 +271,25 @@ export default {
         timer: 1500,
         timerProgressBar: true
       })
+
       let res = await axios.post('/api/reinhardt', {
         data: this.form
       })
+
       if(res.data == 'success'){
+        this.errorBag = {}
         await Toast.fire({
           icon: 'success',
           title: 'Message Delivered'
         })
       }
+
+      if(res.data != 'success'){
+        this.errorBag.name = res.data.name
+        this.errorBag.email = res.data.email
+        this.errorBag.message = res.data.message
+      }
+
     },
     scrollToContent(id) {  
       document.getElementById(id).scrollIntoView({

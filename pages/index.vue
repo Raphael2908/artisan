@@ -45,61 +45,62 @@
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-center w-full">{{ this.skills[this.currentSection].title }}</h1>
             <h1 class="text-center text-xl w-full">{{ this.skills[this.currentSection].description }}</h1>
         </div>
-        <div class="h-screen md:h-screen md:absolute md:top-0 bg-stone-300 flex w-full flex-wrap justify-end" id="mark1">
-            <div class="grid grid-cols-2 gap-5 gap-y-16 w-full xl:grid-cols-3 h-1/2 py-5 md:w-1/2 place-items-center xl:place-self-center">
+
+        <div class="h-screen md:absolute md:top-0 bg-stone-300 flex w-full flex-wrap justify-end" id="mark1">
+            <div class="grid grid-cols-2 h-full w-full md:w-1/2 place-items-center xl:place-self-center xl:gap-y-16 lg:pb-0 xl:grid-cols-3">
 
             <!-- Laravel Card -->
-              <div class="flex flex-col h-36 w-36 lg:h-48 lg:w-48 gap-2 hover:scale-110 duration-200 items-start my-5">
-                <img class="min-h-full min-w-full bg-stone-100 rounded-md shadow-lg p-4" src="/laravel.png" alt="Laravel">
-                <h1 class="lg:text-xl pl-0.5">Laravel</h1>
-                <div class="flex gap-2 justify-start w-full">
+              <div class="flex flex-col gap-2 hover:scale-110 duration-200 items-center">
+                <img class="h-24 w-24 md:h-36 md:w-36 xl:h-48 xl:w-48 bg-stone-100 rounded-md shadow-lg p-4" src="/laravel.png" alt="Laravel">
+                <h1 class="lg:text-xl pl-0.5 text-center w-full">Laravel</h1>
+                <div class="flex gap-2 justify-center w-full">
                   <p class="bg-rose-300 text-rose-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Backend</p>
                   <p class="bg-gray-300 text-gray-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Framework</p>
                 </div>
               </div>
 
             <!-- Vue Card -->
-            <div class="flex flex-col h-36 w-36 lg:h-48 lg:w-48 gap-2 hover:scale-110 duration-200 items-start my-5">
-                <img class="min-h-full min-w-full bg-stone-100 rounded-md shadow-lg p-4" src="/vue.png" alt="Vue">
-                <h1 class="lg:text-xl pl-0.5">Vue</h1>
-                <div class="flex gap-2 justify-start w-full">
+            <div class="flex flex-col gap-2 hover:scale-110 duration-200 items-center">
+                <img class="h-24 w-24 md:h-36 md:w-36 xl:h-48 xl:w-48 bg-stone-100 rounded-md shadow-lg p-4" src="/vue.png" alt="Vue">
+                <h1 class="lg:text-xl pl-0.5 text-center w-full">Vue</h1>
+                <div class="flex gap-2 justify-center w-full">
                   <p class="bg-green-300 text-green-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Frontend</p>
                   <p class="bg-gray-300 text-gray-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Framework</p>
                 </div>
               </div>
             <!-- Tailwind Card -->
-              <div class="flex flex-col h-36 w-36 lg:h-48 lg:w-48 gap-2 hover:scale-110 duration-200 items-start my-5">
-                <img class="min-h-full min-w-full bg-stone-100 rounded-md shadow-lg p-4" src="/tailwind.png" alt="Tailwind">
-                <h1 class="lg:text-xl pl-0.5 ">Tailwind</h1>
-                <div class="flex gap-2 justify-start w-full">
+              <div class="flex flex-col gap-2 hover:scale-110 duration-200 items-center">
+                <img class="h-24 w-24 md:h-36 md:w-36 xl:h-48 xl:w-48 bg-stone-100 rounded-md shadow-lg p-4" src="/tailwind.png" alt="Tailwind">
+                <h1 class="lg:text-xl pl-0.5 text-center w-full ">Tailwind</h1>
+                <div class="flex gap-2 justify-center w-full">
                   <p class="bg-blue-300 text-blue-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">CSS</p>
                   <p class="bg-gray-300 text-gray-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Framework</p>
                 </div>
               </div>
               <!-- Flutter Card -->
-              <div class="flex flex-col h-36 w-36 lg:h-48 lg:w-48 gap-2 hover:scale-110 duration-200 items-start my-5">
-                <img class="min-h-full min-w-full bg-stone-100 rounded-md shadow-lg p-4" src="/flutter.png" alt="flutter">
-                <h1 class="lg:text-xl pl-0.5">Flutter</h1>
-                <div class="flex gap-2 justify-start w-full">
+              <div class="flex flex-col gap-2 hover:scale-110 duration-200 items-center">
+                <img class="h-24 w-24 md:h-36 md:w-36 xl:h-48 xl:w-48 bg-stone-100 rounded-md shadow-lg p-4" src="/flutter.png" alt="flutter">
+                <h1 class="lg:text-xl pl-0.5 text-center w-full">Flutter</h1>
+                <div class="flex gap-2 justify-center w-full">
                   <p class="bg-sky-300 text-sky-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Ui SDK</p>
                   <p class="bg-gray-300 text-gray-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Framework</p>
                 </div>
               </div>
               
               <!-- Nuxt Card -->
-              <div class="flex flex-col h-36 w-36 lg:h-48 lg:w-48 gap-2 hover:scale-110 duration-200 items-start my-5">
-                <img class="min-h-full min-w-full bg-stone-100 rounded-md shadow-lg p-4" src="/nuxt.png" alt="nuxt">
-                <h1 class="lg:text-xl pl-0.5">Nuxt</h1>
-                <div class="flex gap-2 justify-start w-full">
+              <div class="flex flex-col gap-2 hover:scale-110 duration-200 items-center">
+                <img class="h-24 w-24 md:h-36 md:w-36 xl:h-48 xl:w-48 bg-stone-100 rounded-md shadow-lg p-4" src="/nuxt.png" alt="nuxt">
+                <h1 class="lg:text-xl pl-0.5 text-center w-full">Nuxt</h1>
+                <div class="flex gap-2 justify-center w-full">
                   <p class="bg-green-300 text-green-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Frontend</p>
                   <p class="bg-gray-300 text-gray-500 p-2 rounded-md text-xxs md:text-xs shadow-lg">Framework</p>
                 </div>
               </div>
               <!-- Github Card -->
-              <div class="flex flex-col h-36 w-36 lg:h-48 lg:w-48 gap-2 hover:scale-110 duration-200 items-start my-5">
-                <img class="min-h-full min-w-full bg-stone-100 rounded-md shadow-lg p-4" src="/github.png" alt="github">
-                <h1 class="lg:text-xl pl-0.5">Github</h1>
-                <div class="flex gap-2 justify-start w-full">
+              <div class="flex flex-col gap-2 hover:scale-110 duration-200 items-center">
+                <img class="h-24 w-24 md:h-36 md:w-36 xl:h-48 xl:w-48 bg-stone-100 rounded-md shadow-lg p-4" src="/github.png" alt="github">
+                <h1 class="lg:text-xl pl-0.5 text-center w-full">Github</h1>
+                <div class="flex gap-2 justify-center w-full">
                   <p class="bg-zinc-500 text-zinc-300  p-2 rounded-md text-xxs md:text-xs shadow-lg">Version Control</p>
                 </div>
               </div>

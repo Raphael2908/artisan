@@ -12,7 +12,7 @@ const pickuplines = [
 ]
 
 function randomLinesGen(){
-    return pickuplines[Math.floor(Math.random() * length(pickuplines) - 1)]
+    return pickuplines[Math.floor(Math.random() * (pickuplines.length - 1))]
 }
 
 export default function dictonary(){

@@ -16,5 +16,5 @@ function randomLinesGen(){
 }
 
 export default function dictonary(){
-    return `Hi sir, you may want to try to use this: \n \n ${randomLinesGen()} \n \nAll the best sir.`
+    return `Hi sir, you may want to try to use this: \n \n${randomLinesGen()} \n \nAll the best sir.`
 }

@@ -23,6 +23,13 @@ async function commandCentre(command) {
         text: message
     }).then((response) => {
         return 'command received, response sent'
+    }).catch(error => {
+        {
+            axios.post(url, {
+                chat_id: config.chatId,
+                text: error
+            })
+        }
     })
 }
 

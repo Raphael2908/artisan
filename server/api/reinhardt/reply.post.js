@@ -1,5 +1,5 @@
 import axios from "axios"
-import dictonary from "~~/server/helper/dictonary"
+import dictonary from "../../helper/dictonary"
 
 const config = useRuntimeConfig()
 const url = `https://api.telegram.org/bot${config.reinhardt}/sendMessage`

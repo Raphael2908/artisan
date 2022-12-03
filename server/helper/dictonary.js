@@ -1,4 +1,4 @@
-pickuplines = [
+const pickuplines = [
     'Can I follow you? Because my mum told me to follow my dreams',
     'Do you happen to have a Band-Aid? Cause I scraped my knees falling for you.',
     'I never believed in love at first sight, but that was before I saw you.',

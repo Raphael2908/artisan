@@ -8,11 +8,15 @@ const pickuplines = [
     'I always thought happiness started with an ‘h,’ but it turns out mine starts with ‘u.’',
     'I believe in following my dreams. Can I have your Instagram?',
     'Are you an American school? Because I want to shoot kids inside you.',
-    'Let us flip a coin, whatever it lands on is whatever I get'
+    'Let us flip a coin, whatever it lands on is whatever I get',
+    'Your hand looks heavy—can I hold it for you?',
+    'Did you know I am a time traveller? And you are in my future',
+    'Is your mum‘s name practice? Because practice makes perfect',
+    'Are you a secret? Because I don‘t think I can share you'
 ]
 
 function randomLinesGen(){
-    return pickuplines[Math.floor(Math.random() * (pickuplines.len - 1))]
+    return pickuplines[Math.floor(Math.random() * (pickuplines.length - 1))]
 }
 
 export default function dictonary(){

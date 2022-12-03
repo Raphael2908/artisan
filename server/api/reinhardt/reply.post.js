@@ -1,5 +1,5 @@
 import axios from "axios"
-
+import dictonary from "~~/server/helper/dictonary"
 
 const config = useRuntimeConfig()
 const url = `https://api.telegram.org/bot${config.reinhardt}/sendMessage`
@@ -9,7 +9,7 @@ async function commandCentre(command) {
     let message = ''
     switch (command) {
         case '/dictionary':
-            message = "Hi sir, you may want to try to use this: \n \nAre you a secret? Because I can't share you. \n \nAll the best sir."
+            message = dictonary()
             break;
         case '/sos':
             message = "SOS protocol initiated sir"

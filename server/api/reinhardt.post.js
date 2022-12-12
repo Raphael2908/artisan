@@ -3,11 +3,11 @@ import axios from "axios"
 const config = useRuntimeConfig()
 
 const sendMsg = async function(body) { 
-    let message = `Hi Sir, there is a new message from ${body.data.name}. 
+    let message = `Hi Sir, there is a new message from **${body.data.name}**. 
     \n His/Her contacts are: 
     \n email: ${body.data.email}
     \n phone number: ${body.data.phone_number}
-    \n This is what ${body.data.name} has to say:
+    \n This is what **${body.data.name}** has to say:
     \n "${body.data.message}"`
     
     return axios.post(`https://api.telegram.org/bot${config.reinhardt}/sendMessage`, {

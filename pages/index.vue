@@ -108,23 +108,26 @@
         </div>
         <div class="h-screen md:h-screen bg-stone-400 flex w-full items-center md:justify-end" id="mark2">
             <div class="grid grid-cols-1 place-self-center md:w-1/2 place-items-center">
-              <div class="flex flex-col gap-2 w-3/4">
+              <div class="flex flex-col gap-5 w-3/4">
                 <a href="https://www.glance.sg">
-                  <img class="rounded-2xl shadow-lg hover:scale-105 duration-300" src="/glance.png" alt="glance" srcset="">
+                  <img class="rounded-xl shadow-lg hover:scale-105 duration-300" src="/glance.png" alt="glance" srcset="">
                 </a>
-                <h1 class="text-white text-lg text-center font-semibold">A platform to connect Companies or Organizations with Local Freelancers</h1>
+
+                <a href="https://champs-cafe.zenr.ninja/">
+                  <img class="rounded-xl shadow-lg hover:scale-105 duration-300" src="/champs-cafe.png" alt="glance" srcset="">
+                </a>
               </div>
             </div>
         </div>
          <div class="h-screen md:h-screen bg-stone-500 flex w-full items-center md:justify-end" id="mark3">
             <div class="grid grid-cols-1 place-self-center md:w-1/2 place-items-center">
               <div class="flex flex-col gap-2 w-3/4">
-                  <img class="rounded-2xl shadow-lg hover:scale-105 duration-300" src="/dean_list.jpeg" alt="dean list" srcset="">
+                  <img class="rounded-2xl shadow-lg" src="/dean_list.jpeg" alt="dean list" srcset="">
               </div>
             </div>
         </div>
       </section>    
-      <Form/>
+      <ContactForm/>
   </div>
 </template>
 

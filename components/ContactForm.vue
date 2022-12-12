@@ -1,32 +1,31 @@
 <template>
-    <form @submit.prevent="messageReinhardt" class="h-screen absolute bg-stone-100 w-full flex items-center justify-center flex-col gap-5 px-2">
-        <h1 class="text-2xl md:text-4xl text-center">Let's make something <span class="font-bold">extravagant</span></h1>
-        <div class="flex flex-col w-1/2 gap-2">
-          <div>
-            <label for="">Name</label>
-            <p v-if="errorBag.name" class="text-red-500" for="">Please enter your name</p>
-            <input v-model="form.name" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5" type="text">
-          </div>
-
-          <div>
-            <label for="">Email</label>
-            <p v-if="errorBag.email" class="text-red-500" for="">Please enter a valid email</p>
-            <input v-model="form.email" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5" type="text">
-          </div>
-
-          <div>
-            <label for="">Phone Number</label>
-            <input v-model="form.phone_number" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5" type="text">
-          </div>
-
-          <div>
-            <label for="">Message</label>
-            <p v-if="errorBag.message" class="text-red-500" for="">Please send me a message :P</p>
-            <textarea v-model="form.message" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5 md:h-64"/>
-          </div>
-        </div>
-        <button class="bg-stone-500 px-4 py-2 rounded-xl text-white text-xl font-semibold shadow-lg hover:bg-stone-800 duration-200 hover:scale-110 active:scale-90">Collaborate</button>
-      </form>
+    <section>
+        <form @submit.prevent="messageReinhardt" class="h-screen absolute bg-stone-100 w-full flex items-center justify-center flex-col gap-5 px-2">
+            <h1 class="text-2xl md:text-4xl text-center">Let's make something <span class="font-bold">extravagant</span></h1>
+            <div class="flex flex-col w-1/2 gap-2">
+              <div>
+                <label for="">Name</label>
+                <p v-if="errorBag.name" class="text-red-500" for="">Please enter your name</p>
+                <input v-model="form.name" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5" type="text">
+              </div>
+              <div>
+                <label for="">Email</label>
+                <p v-if="errorBag.email" class="text-red-500" for="">Please enter a valid email</p>
+                <input v-model="form.email" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5" type="text">
+              </div>
+              <div>
+                <label for="">Phone Number</label>
+                <input v-model="form.phone_number" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5" type="text">
+              </div>
+              <div>
+                <label for="">Message</label>
+                <p v-if="errorBag.message" class="text-red-500" for="">Please send me a message :P</p>
+                <textarea v-model="form.message" class="border border-stone-300 text-gray-900 text-sm rounded-lg focus:border-stone-500 outline-stone-500 block w-full p-2.5 md:h-64"/>
+              </div>
+            </div>
+            <button class="bg-stone-500 px-4 py-2 rounded-xl text-white text-xl font-semibold shadow-lg hover:bg-stone-800 duration-200 hover:scale-110 active:scale-90">Collaborate</button>
+          </form>
+    </section>
 </template>
 
 <script>

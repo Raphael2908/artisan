@@ -106,17 +106,20 @@
               </div>
             </div>
         </div>
-        <div class="h-screen md:h-screen bg-stone-400 flex w-full items-center md:justify-end" id="mark2">
-            <div class="grid grid-cols-1 place-self-center md:w-1/2 place-items-center">
-              <div class="flex flex-col gap-5 w-3/4">
-                <a href="https://www.glance.sg">
-                  <img class="rounded-xl shadow-lg hover:scale-105 duration-300" src="/glance.png" alt="glance" srcset="">
+        <div class="min-h-screen bg-stone-400 flex w-full items-center md:justify-end" id="mark2">
+            <div class=" grid grid-cols-1 place-self-center md:w-1/2 place-items-center py-10 px-10 gap-5 overflow-hidden">
+              <a href="https://www.glance.sg" class="h-fit max-h-fit">
+                  <img class="rounded-xl shadow-lg hover:scale-105 duration-300 object-cover" src="/glance.png" alt="glance" srcset="">
                 </a>
+             
+              <a href="https://champs-cafe.zenr.ninja/" class="h-fit max-h-fit">
+                <img class="rounded-xl shadow-lg hover:scale-105 duration-300 object-cover" src="/champs-cafe.png" alt="glance" srcset="">
+              </a>
 
-                <a href="https://champs-cafe.zenr.ninja/">
-                  <img class="rounded-xl shadow-lg hover:scale-105 duration-300" src="/champs-cafe.png" alt="glance" srcset="">
-                </a>
-              </div>
+              <a href="https://tea-docs.zenr.ninja/" class="h-fit max-h-fit">
+                <img class="rounded-xl shadow-lg hover:scale-105 duration-300 object-cover" src="/tea-docs.png" alt="glance" srcset="">
+              </a>
+
             </div>
         </div>
          <div class="h-screen md:h-screen bg-stone-500 flex w-full items-center md:justify-end" id="mark3">

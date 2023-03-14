@@ -41,13 +41,12 @@ export default defineEventHandler(async (event) => {
       // Send a message to the device corresponding to the provided
       // registration token.
     
-    admin.messaging().send(message)
+    return admin.messaging().send(message)
         .then((response) => {
           // Response is a message ID string.
-          console.log('Successfully sent message:', response);
+          return Promise.resolve('Successfully sent message:', response);
         })
         .catch((error) => {
-          console.log('Error sending message:', error);
+          return Promise.reject('Error sending message:', error);
         });
-    return(`receive request to send message: ${message.notification}`);
 })

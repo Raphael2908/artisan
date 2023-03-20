@@ -20,33 +20,11 @@ const firebaseConfig = {
 const serviceAccount = JSON.parse(Buffer.from(config.firebaseServiceAccountKey, 'base64').toString())
 
 // Initialize Firebase
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // Initialize Firebase Admin SDK
-admin.initializeApp({
+const adminApp = admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
 
-export default defineEventHandler(async (event) => {
-    const body = await readBody(event)
-
-    const message = {
-        notification: {
-          title: 'Hello, World!',
-          body: 'This is a notification message!'
-        },
-        token: body.registration_token
-      };
-      
-      // Send a message to the device corresponding to the provided
-      // registration token.
-    
-    return admin.messaging().send(message)
-        .then((response) => {
-          // Response is a message ID string.
-          return Promise.resolve('Successfully sent message:', response);
-        })
-        .catch((error) => {
-          return Promise.reject('Error sending message:', error);
-        });
-})
+export { app, adminApp  }
